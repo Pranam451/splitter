@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Splitter</title>
+    <link rel="stylesheet" href="css/main.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            clifford: '#da373d',
+          }
+        }
+      }
+    }
+  </script>
+    <link rel="stylesheet" href="webfonts/fa-whole-web.css" />
+    <style>
+      body {
+        background-color: black;
+      }
+      .w-avaliable {
+        width: -webkit-fill-available;
+      }
+      .mainResult {
+        height: 15vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(132 204 22);
+        padding: 0% 4%;
+      }
+      .errorResult {
+        height: 15vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgb(220 38 38);
+        padding: 0% 4%;
+      }
+      button.resetBtn {
+        color: white;
+        font-size: 20px;
+        border: 1px solid white;
+        padding: 1% 2%;  
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <h1
+        class="text-4xl mt-5 mb-7 text-white text-center"
+        style="font-family: 'Pacifico', cursive"
+      >
+        Bill Splitter
+      </h1>
+    </nav>
+    <section class="mb-6" id="mainBar"></section>
+    <div class="sm:block hidden">
+      <div class="my-8 text-white text-4xl text-center">
+        Please decrease display size <=640px or switch to mobile devices
+      </div>
+    </div>
+    <div class="sm:hidden block">
+      <div class="mx-3 bg-gradient-to-r from-blue-600 via-blue-800 to-blue-900 py-6 px-4 rounded-md">
+        <h1 class="text-3xl mb-3 text-white">Bill Amount</h1>
+        <label for="amount" class="text-white text-3xl"
+          ><i class="far fa-indian-rupee-sign"></i
+        ></label>
+        <input
+          type="text"
+          id="amount"
+          max="9999"
+          required="required"
+          placeholder=""
+          class="bg-transparent focus:outline-none border-b-2 mb-7 text-white text-4xl w-1/4 border-white"
+        />
+
+        <h1 class="text-3xl mb-3 text-white">Number Of Friends</h1>
+        <label for="amount" class="text-white text-3xl"
+          ><i class="fa-duotone fa-user-group"></i
+        ></label>
+        <input
+          type="text"
+          id="friends"
+          placeholder=""
+          required="required"
+          class="bg-transparent focus:outline-none border-b-2 mb-7 text-white text-4xl w-1/4 border-white"
+        />
+      </div>
+
+      <button
+        onclick="calc()"
+        class="px-4 py-2 my-7 mx-3 w-avaliable text-3xl text-blue-600 font-semibold rounded-full border border-blue-600 hover:text-white hover:bg-blue-600 hover:border-transparent focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2"
+      >
+        <i class="fa-duotone fa-dice"></i>
+        Calculate
+      </button>
+    </div>
+    <script src="main.js"></script>
+  </body>
+</html>
